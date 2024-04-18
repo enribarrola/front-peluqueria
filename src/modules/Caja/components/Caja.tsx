@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Cliente } from '../../intefaces/cliente/types'
-import { obtenerPorCI } from '../../api/cliente/agregar-cliente'
-import ModalRegistrarCliente from '../ModalRegistrarCliente'
-import AgregarCliente from '../cliente/AgregarCliente'
+import { Cliente } from '../../../intefaces/cliente/types'
+import { obtenerPorCI } from '../../../api/cliente/agregar-cliente'
+import ModalRegistrarCliente from '../../ATC/components/ModalRegistrarCliente'
+import AgregarCliente from '../../ATC/components/AgregarCliente'
 
 
 interface FormState {

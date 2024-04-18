@@ -1,7 +1,7 @@
-import '../App.css';
+import '../../../App.css';
 import React, { useState } from 'react';
 import {Link,Outlet} from 'react-router-dom';
-import { useAuthStore } from "../store/auth";
+import { useAuthStore } from "../../../store/auth";
 function Layout() {
 	const roles = useAuthStore((state) => state.roles);
 	const [expanded, setExpanded] = useState(false);

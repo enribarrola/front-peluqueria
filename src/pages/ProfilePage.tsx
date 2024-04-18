@@ -1,4 +1,4 @@
-import Caja from "../components/Caja/Caja";
+import Caja from "../modules/Caja/components/Caja";
 import { useAuthStore } from "../store/auth";
 import { useNavigate } from "react-router-dom";
 

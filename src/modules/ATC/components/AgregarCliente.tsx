@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Cliente } from '../../intefaces/cliente/types'
-import { PAISES } from '../../constants/paises';
-import { TIPO_CONTRIBUYENTE } from '../../constants/tipoContribuyente';
-import { TIPO_DOCUMENTO } from '../../constants/tipoDocumento';
-import { agregarCliente } from '../../api/cliente/agregar-cliente';
-import Alert from '../Alert';
+import { Cliente } from '../../../intefaces/cliente/types'
+import { PAISES } from '../../../constants/paises';
+import { TIPO_CONTRIBUYENTE } from '../../../constants/tipoContribuyente';
+import { TIPO_DOCUMENTO } from '../../../constants/tipoDocumento';
+import { agregarCliente } from '../../../api/cliente/agregar-cliente';
+import Alert from './Alert';
 
 interface FormState {
 	inputValues: Cliente

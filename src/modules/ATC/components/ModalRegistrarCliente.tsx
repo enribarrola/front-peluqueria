@@ -1,5 +1,5 @@
 import React from 'react'
-import AgregarCliente from './cliente/AgregarCliente'
+import AgregarCliente from './AgregarCliente'
 interface ModalProps  {
 	showModal: boolean;
 	handleClose: () => void;

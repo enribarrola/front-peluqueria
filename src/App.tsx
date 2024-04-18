@@ -11,7 +11,7 @@ import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
 import RegisterPage from "./pages/RegisterPage";
 import Logout from "./pages/Logout";
-import Layout from "./components/Layout";
+import Layout from "./modules/Layout/components/Layout";
 import AgregarClientePage from "./pages/cliente/AgregarClientePage";
 
 function App() {
