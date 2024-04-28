@@ -2,6 +2,7 @@ import '../../../App.css';
 import React, { useState } from 'react';
 import {Link,Outlet} from 'react-router-dom';
 import { useAuthStore } from "../../../store/auth";
+import { routes } from '../../../routes/routes';
 function Layout() {
 	const roles = useAuthStore((state) => state.roles);
 	const [expanded, setExpanded] = useState(false);
@@ -24,10 +25,10 @@ function Layout() {
 					</div>
 					<ul className="sidebar-nav">
 						{roles.some(role => ["admin"].includes(role)) && <li className="sidebar-item">
-							<a href="#" className="sidebar-link">
+							<Link to={routes.LAYOUT.URL_ATC} className="sidebar-link">
 								<i className="bi bi-person"></i>
-								<span>Profile</span>
-							</a>
+								<span>ATC</span>
+							</Link>
 						</li>}
 						<li className="sidebar-item">
 							<Link to="/agregar-cliente" className="sidebar-link">

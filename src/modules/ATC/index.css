@@ -1,0 +1,16 @@
+.nav-link {
+	color: black !important;
+}
+
+.nav-tabs {
+	/* 	border-bottom: black !important;
+	border-width: 1px !important; */
+	--bs-nav-tabs-border-width: var(--bs-border-width) !important;
+	--bs-nav-tabs-border-color: #000000 !important;
+	--bs-nav-tabs-border-radius: var(--bs-border-radius) !important;
+	--bs-nav-tabs-link-hover-border-color: #000000 #000000 var(--bs-border-color) !important;
+	--bs-nav-tabs-link-active-color: var(--bs-emphasis-color) !important;
+	--bs-nav-tabs-link-active-bg: var(--bs-body-bg) !important;
+	--bs-nav-tabs-link-active-border-color: #212529 #000000 #fffdfd !important;
+	border-bottom: var(--bs-nav-tabs-border-width) solid #212529 !important;
+}

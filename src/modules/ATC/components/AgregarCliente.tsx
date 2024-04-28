@@ -3,8 +3,8 @@ import { Cliente } from '../../../intefaces/cliente/types'
 import { PAISES } from '../../../constants/paises';
 import { TIPO_CONTRIBUYENTE } from '../../../constants/tipoContribuyente';
 import { TIPO_DOCUMENTO } from '../../../constants/tipoDocumento';
-import { agregarCliente } from '../../../api/cliente/agregar-cliente';
-import Alert from './Alert';
+import { crearCliente } from '../../../api/cliente/cliente';
+import Alert from './utils/Alert';
 
 interface FormState {
 	inputValues: Cliente
@@ -17,16 +17,17 @@ interface FormState {
 
 const ESTADO_INICIAL_INPUTS: FormState["inputValues"] = {
 		contribuyente: false,
-		razonSocial: '',
+		razon_social: '',
 		nacionalidad: 177,
-		correo: '',
+		correo_electronico: '',
 		tipoContribuyente: "1",
 		tipoDocumento: "1",
-		numeroDocumento: null,
-		numeroTelefono: null,
+		nro_documento: null,
+		celular: null,
 		fechaNacimiento: '',
 		RUC: null,
-		tipoOperacion: "1"
+		tipoOperacion: "1",
+		fantasia: ''
 }
 
 function AgregarCliente() {
@@ -43,7 +44,7 @@ function AgregarCliente() {
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
-		const res = await agregarCliente(inputValues)
+		const res = await crearCliente(inputValues)
 		
 		if (res?.status === 200) {
 			setInputValues(ESTADO_INICIAL_INPUTS);
@@ -58,11 +59,6 @@ function AgregarCliente() {
 				setError({ error: false, descripcion: '' , type: ''});
 			}, 5000);
 		}
-
-		
-
-
-
 
 
 	}
@@ -97,9 +93,16 @@ function AgregarCliente() {
 							</label>
 						</div>
 						{/*  */}
+						{inputValues.contribuyente && (
 						<div className="form-floating mt-4">
-							<input onChange={handleChange} value={inputValues.razonSocial} type="text" className="form-control" name="razonSocial" placeholder="" required />
+							<input onChange={handleChange} value={inputValues.razon_social} type="text" className="form-control" name="razonSocial" placeholder="" required />
 							<label htmlFor="floatingInput">Razon social</label>
+						</div>
+						)}
+						{/*  */}
+						<div className="form-floating mt-4">
+							<input onChange={handleChange} value={inputValues.fantasia} type="text" className="form-control" name="fantasia" placeholder="" required />
+							<label htmlFor="floatingInput">Nombre Fantasia</label>
 						</div>
 						{/*  */}
 						<div className="form-floating mt-4">
@@ -115,7 +118,7 @@ function AgregarCliente() {
 						</div>
 						{/*  */}
 						<div className="form-floating mt-4" >
-							<input onChange={handleChange} value={inputValues.correo} type="email" className="form-control " name="correo" placeholder="" required />
+							<input onChange={handleChange} value={inputValues.correo_electronico} type="email" className="form-control " name="correo" placeholder="" required />
 							<label htmlFor="floatingInput">Correo</label>
 						</div>
 						{/*  */}
@@ -142,12 +145,12 @@ function AgregarCliente() {
 						</div>
 						{/*  */}
 						<div className="form-floating mt-4">
-							<input onChange={handleChange} value={inputValues.numeroDocumento || ''} type="number" className="form-control" name="numeroDocumento" placeholder="" required />
+							<input onChange={handleChange} value={inputValues.nro_documento || ''} type="number" className="form-control" name="numeroDocumento" placeholder="" required />
 							<label htmlFor="floatingInput">Numero de documento</label>
 						</div>
 						{/*  */}
 						<div className="form-floating mt-4">
-							<input onChange={handleChange} value={inputValues.numeroTelefono || ''} type="number" className="form-control" name="numeroTelefono" placeholder="" required />
+							<input onChange={handleChange} value={inputValues.celular || ''} type="number" className="form-control" name="numeroTelefono" placeholder="" required />
 							<label htmlFor="floatingInput">Numero de telefono</label>
 						</div>
 						{/*  */}

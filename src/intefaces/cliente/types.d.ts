@@ -1,16 +1,22 @@
 export interface Cliente {
 	id_cliente?: number
 	contribuyente: boolean
-	razonSocial: string
+	razon_social: string
 	nacionalidad: number
-	correo: string
+	correo_electronico: string
 	tipoContribuyente: string | null
 	tipoDocumento: string | null
-	numeroDocumento: number | null
-	numeroTelefono: number | null
+	nro_documento: number | null
+	celular: number | null
 	fechaNacimiento: string
 	RUC: string | null
-	tipoOperacion: string
+	tipoOperacion: string,
+	fantasia: string
 	//PASAR A UNA INTERFAZ
+}
 
+export interface ClienteFicha {
+	fecha: string
+	nombre_servicio: string
+	precio: number
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Cliente } from '../../../intefaces/cliente/types'
-import { obtenerPorCI } from '../../../api/cliente/agregar-cliente'
+import { obtenerCliente } from '../../../api/cliente/cliente'
 import ModalRegistrarCliente from '../../ATC/components/ModalRegistrarCliente'
 import AgregarCliente from '../../ATC/components/AgregarCliente'
 
@@ -25,7 +25,8 @@ const ESTADO_INICIAL_INPUTS: FormState["inputValues"] = {
 	numeroTelefono: null,
 	fechaNacimiento: '',
 	RUC: null,
-	tipoOperacion: "1"
+	tipoOperacion: "1",
+	fantasia: '',
 }
 
 
@@ -46,7 +47,7 @@ export default function Caja() {
 	}, [inputValues.contribuyente]);
 
 	const handleBlur = async () => {
-		const res = await obtenerPorCI(inputValues.numeroDocumento || 1)
+		const res = await obtenerCliente(inputValues.numeroDocumento || 1)
 		if (res?.status === 200) {
 			const data = await res.json();
 			setInputValues({
@@ -72,7 +73,7 @@ export default function Caja() {
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
-		const res = await obtenerPorCI(inputValues.numeroDocumento || 1)
+		const res = await obtenerCliente(inputValues.numeroDocumento || 1)
 
 		if (res?.status === 200) {
 			setInputValues(await res.json())
