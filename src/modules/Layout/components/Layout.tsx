@@ -25,7 +25,7 @@ function Layout() {
 					</div>
 					<ul className="sidebar-nav">
 						{roles.some(role => ["admin"].includes(role)) && <li className="sidebar-item">
-							<Link to={routes.LAYOUT.URL_ATC} className="sidebar-link">
+							<Link to={routes.LAYOUT.ATC} className="sidebar-link">
 								<i className="bi bi-person"></i>
 								<span>ATC</span>
 							</Link>
@@ -45,6 +45,21 @@ function Layout() {
 							<ul id="auth" className="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
 								<li className="sidebar-item">
 									<a href="#" className="sidebar-link">Login</a>
+								</li>
+								<li className="sidebar-item">
+									<a href="#" className="sidebar-link">Register</a>
+								</li>
+							</ul>
+						</li>
+						<li className="sidebar-item">
+							<a href="#" className="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+								data-bs-target="#tesoreria" aria-expanded="false" aria-controls="tesoreria">
+								<i className="bi bi-bank"></i>
+								<span>Tesoreria</span>
+							</a>
+							<ul id="tesoreria" className="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+								<li className="sidebar-item">
+									<Link to={routes.LAYOUT.TESORERIA} className="sidebar-link">Cuentas</Link>
 								</li>
 								<li className="sidebar-item">
 									<a href="#" className="sidebar-link">Register</a>

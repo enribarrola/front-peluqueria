@@ -19,6 +19,7 @@ function App() {
 	const ProfilePage = React.lazy(() => import('./pages/ProfilePage'));
 	const AgregarClientePage = React.lazy(() => import('./pages/cliente/AgregarClientePage'));
 	const AtcPage = React.lazy(() => import('./pages/AtcPage'));
+	const TesoreriaPage = React.lazy(() => import('./pages/TesoreriaPage'));
 
 	return (
 		<BrowserRouter>
@@ -47,6 +48,11 @@ function App() {
 					<Route element={<ProtectedRoute isAllowed={isAuth && roles.includes("admin" || "cajero")} />}>
 						<Route path="/" element={<Layout />}>
 							<Route path={`${routes.PADRE.URL_ATC}/*`} element={<AtcPage />} />
+						</Route>
+					</Route>
+					<Route element={<ProtectedRoute isAllowed={isAuth && roles.includes("admin" || "cajero")} />}>
+						<Route path="/" element={<Layout />}>
+							<Route path={`${routes.PADRE.URL_TESORERIA}/*`} element={<TesoreriaPage />} />
 						</Route>
 					</Route>
 
