@@ -21,5 +21,6 @@ export const routes = {
 	},
 	TESORERIA: {
 		URL_TESORERIA: "/cuentas",
+		URL_DETALLE_CUENTA: "/cuentas/:id",
 	}
 }
