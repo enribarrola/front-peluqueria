@@ -4,11 +4,13 @@ import { Cliente, ClienteFicha } from "../intefaces/cliente/types";
 interface State {
 	cliente: Cliente | null;
 	ficha: ClienteFicha[] | null;
+	clientes: Cliente[] | [];
 };
 
 interface Actions {
 	setCliente: (cliente: Cliente) => void;
 	setFicha: (ficha: ClienteFicha[]) => void;
+	setClientes: (clientes: Cliente[]) => void;
 }
 
 export const useClienteStore = create<State & Actions>((set) => ({
@@ -21,6 +23,11 @@ export const useClienteStore = create<State & Actions>((set) => ({
 	setFicha: (ficha) =>
 		set((state) => ({
 			ficha
+		})),
+		clientes: [],
+	setClientes: (clientes) =>
+		set((state) => ({
+			clientes
 		})),
 })
 );

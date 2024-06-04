@@ -18,6 +18,7 @@ function LoginPage() {
 		if (resLogin?.status == 200) {
 			const resLoginJson = await resLogin?.json();
 			setToken(resLoginJson.token, resLoginJson.roles);
+			setProfile(resLoginJson.user);
 
 			/* const resProfile = await profileRequest(resLogin.data.token);
 			setProfile(resProfile.data); */
@@ -30,7 +31,7 @@ function LoginPage() {
 	};
 
 	return (
-		<div className="container-sm mt-5" style={{ width: "20%" }}>
+		<div className="container-sm mt-5">
 			<form onSubmit={handleSubmit} >
 				<div className="mb-3">
 					<label className="form-label" style={{ color: "white" }}>Usuario:</label>

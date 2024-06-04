@@ -31,9 +31,9 @@ function Layout() {
 							</Link>
 						</li>}
 						<li className="sidebar-item">
-							<Link to="/agregar-cliente" className="sidebar-link">
-								<i className="bi bi-list-task"></i>
-								<span>Task</span>
+							<Link to={routes.LAYOUT.CAJA_REGISTRADORA} className="sidebar-link">
+								<i className="bi bi-cart4"></i>
+								<span>Caja Registradora</span>
 							</Link>
 						</li>
 						<li className="sidebar-item">

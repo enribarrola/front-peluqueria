@@ -9,6 +9,7 @@ import { useAuthStore } from "./store/auth";
 import Logout from "./pages/Logout";
 import { routes } from "./routes/routes";
 import React, { lazy, Suspense } from "react";
+import CajaRegistradoraPage from "./pages/CajaRegistradoraPage";
 
 function App() {
 	const isAuth = useAuthStore((state) => state.isAuth);
@@ -53,6 +54,11 @@ function App() {
 					<Route element={<ProtectedRoute isAllowed={isAuth && roles.includes("admin" || "cajero")} />}>
 						<Route path="/" element={<Layout />}>
 							<Route path={`${routes.PADRE.URL_TESORERIA}/*`} element={<TesoreriaPage />} />
+						</Route>
+					</Route>
+					<Route element={<ProtectedRoute isAllowed={isAuth && roles.includes("admin" || "cajero")} />}>
+						<Route path="/" element={<Layout />}>
+							<Route path={`${routes.PADRE.URL_CAJA_REGISTRADORA}/*`} element={<CajaRegistradoraPage />} />
 						</Route>
 					</Route>
 

@@ -3,7 +3,7 @@ export const routes = {
 		ATC: "/atc/cliente",
 		HOME: "/",
 		LOGIN: "/login",
-		REGISTER: "/register",
+		CAJA_REGISTRADORA: "/caja-registradora",
 		PROFILE: "/profile",
 		TESORERIA: "/tesoreria/cuentas",
 		LOGOUT: "/logout",
@@ -11,6 +11,7 @@ export const routes = {
 	PADRE:{
 		URL_ATC: "/atc",
 		URL_TESORERIA: "/tesoreria",
+		URL_CAJA_REGISTRADORA: "/caja-registradora",
 	},
 	ATC: {
 		URL_ATC: "atc",
@@ -22,5 +23,9 @@ export const routes = {
 	TESORERIA: {
 		URL_TESORERIA: "/cuentas",
 		URL_DETALLE_CUENTA: "/cuentas/:id",
-	}
+	},
+	CAJA_REGISTRADORA: {
+		URL_CAJA_REGISTRADORA: "/",
+		URL_DETALLE_CAJA: "/caja-registradora/:id",
+	},
 }

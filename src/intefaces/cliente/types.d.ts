@@ -9,7 +9,7 @@ export interface Cliente {
 	nro_documento: number | null
 	celular: number | null
 	fechaNacimiento: string
-	RUC: string | null
+	ruc: string | null
 	tipoOperacion: string,
 	fantasia: string
 	//PASAR A UNA INTERFAZ
